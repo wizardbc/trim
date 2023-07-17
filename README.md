@@ -4,6 +4,7 @@ Trimmed Rank with Inverse softMax probability.
 Universal and reliable, but simple, OOD(Out-of-Distribution) score.
 
 ## Datasets
+Place datasets under `./data/`
 
 ### ImageNet-1k as ID
 * [ILSVRC-2012/val](https://image-net.org/challenges/LSVRC/2012/2012-downloads.php) [[download](https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar)]
@@ -27,3 +28,27 @@ From [hendrycks/natural-adv-examples](https://github.com/hendrycks/natural-adv-e
 From [ViM](https://github.com/haoqiwang/vim/tree/master)
 * OpenImage-O: a subset of the [OpenImage-V3](https://github.com/openimages/dataset/blob/main/READMEV3.md) testing set. [[filelist](https://raw.githubusercontent.com/haoqiwang/vim/master/datalists/openimage_o.txt)]
 
+
+## Create Runners
+Create runners and save them in `./runners/`.
+
+Runners not contained in this repository.
+```bash
+python create_runner.py WEIGHT_NAME
+```
+Choose one `WEIGHT_NAME` in the `weights.list`.
+
+## Evaluate
+Evaluate OOD methods and save results in `./results/`.
+
+Saved results are contained in this repository.
+```bash
+python eval_runner.py WEIGHT_NAME
+```
+Choose one `WEIGHT_NAME` in the `weights.list`
+
+* For more details `eval.ipynb`
+
+## `resnet50.{A,B,C}`
+Three weights trained from scratch are contained in `./train/`.
+* For more details read `./train/README.md`
